@@ -67,7 +67,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/STJr/SRB2
-        tag: SRB2_release_2.2.6
+        tag: SRB2_release_2.2.8
         commit: e22964ee0aa113a11ae235f37564e6f41bff3c30
       - type: script
         commands:
@@ -86,18 +86,12 @@ modules:
     sources:
       - type: extra-data
         filename: Installer.exe
-        url: https://github.com/STJr/SRB2/releases/download/SRB2_release_2.2.1/SRB2-v_221-Installer.exe
+        url: https://github.com/STJr/SRB2/releases/download/SRB2_release_2.2.8/SRB2-v2.2.8-Installer.exe
         sha256: 5af82508be353dd41b05b793fa7aaef418eab246df7050f72c569f1809b3160f
         size: 163207241
-      - type: extra-data
-        filename: Patch.zip
-        url: https://github.com/STJr/SRB2/releases/download/SRB2_release_2.2.6/SRB2-2.2.6-Patch.zip
-        sha256: ca71aa9045f02336dc0ae2ababed49eb93dcb06405ccd4c19fc684f002ab9017
-        size: 23170909
       - type: script
         commands:
           - 7z e Installer.exe "*.dta" "*.pk3" > /dev/null && rm Installer.exe
-          - unzip -o Patch.zip "*.dta" "*.pk3" > /dev/null && rm Patch.zip
         dest-filename: apply_extra
     modules:
       - name: p7zip
